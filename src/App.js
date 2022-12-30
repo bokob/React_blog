@@ -9,6 +9,10 @@ function App() {
   let [따봉, 따봉변경] = useState(0);
   let [modal, setModal] = useState(false);
 
+  [1,2,3].map(function(a){
+    return '123'
+  })
+
   return (
     <div className="App">
       <div className="black-nav">
@@ -38,14 +42,24 @@ function App() {
       </div>
 
       <div className="list">
-        <h4 onClick={()=>{
-          setModal(!modal)
-        }}>{글제목[2]}</h4>
+        <h4 onClick={()=>{setModal(!modal)}}>{글제목[2]}</h4>
         <p>2월 17일 발행</p>
       </div>
+      
       {
-        modal == true ? <Modal/> : null
+        (modal==true) ? <Modal/> : null 
       }
+
+      {/* {
+        글제목.map(function(a, i){
+          return (
+            <div className="list">
+            <h4 onClick={()=>{setModal(true)}}>{글제목[i]}</h4>
+            <p>2월 17일 발행</p>
+          </div>
+          )
+        })
+      } */}
       
     </div>
   );
